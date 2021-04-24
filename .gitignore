@@ -2,3 +2,4 @@
 
 packages/local-client/.DS_Store
 packages/local-client/node_modules
+packages/cli/node_modules
