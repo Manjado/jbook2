@@ -1,40 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducer from './reducers';
-import { ActionType } from './action-types';
+import { persisMiddlware} from './middlewares/presist-middlware'
 
-export const store = createStore(reducer, {}, applyMiddleware(thunk));
-
-store.dispatch({
-  type: ActionType.INSERT_CELL_AFTER,
-  payload: {
-    id: null,
-    type: 'code',
-  },
-});
-
-store.dispatch({
-  type: ActionType.INSERT_CELL_AFTER,
-  payload: {
-    id: null,
-    type: 'text',
-  },
-});
-
-store.dispatch({
-  type: ActionType.INSERT_CELL_AFTER,
-  payload: {
-    id: null,
-    type: 'code',
-  },
-});
-
-store.dispatch({
-  type: ActionType.INSERT_CELL_AFTER,
-  payload: {
-    id: null,
-    type: 'text',
-  },
-});
-
-console.log(store.getState());
+export const store = createStore(reducer, {}, applyMiddleware(persisMiddlware ,thunk));

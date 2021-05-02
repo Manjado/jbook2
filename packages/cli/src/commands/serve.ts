@@ -18,13 +18,13 @@ export const serveCommand = new Command()
         !isProduction
       );
       console.log(
-        `Opened ${filename}. Navigate to http://localhost:${options.port} to edit the file`
+        `Opened ${filename}. Navigate to http://localhost:${options.port} to edit the file.`
       );
     } catch (err) {
       if (err.code === 'EADDRINUSE') {
-        console.error('Port is in use. Try running on a diffrent port.');
+        console.error('Port is in use. Try running on a different port.');
       } else {
-        console.log('Heres tje problem', err.message);
+        console.log('Heres the problem', err.message);
       }
       process.exit(1);
     }
